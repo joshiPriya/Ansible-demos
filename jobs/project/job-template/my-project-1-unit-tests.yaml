@@ -1,0 +1,7 @@
+- job-template:
+    name: '{name}-unit-tests'
+    project-type: pipeline
+    pipeline-scm:
+      scm:
+        - project-scm
+    sandbox: true

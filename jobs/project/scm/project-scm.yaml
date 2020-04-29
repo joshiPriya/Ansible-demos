@@ -1,0 +1,8 @@
+- scm:
+    name: project-scm
+    scm:
+        - git:
+           url: https://github.com/joshiPriya/hello-world.git
+           clean: true
+           branches: 
+              - master

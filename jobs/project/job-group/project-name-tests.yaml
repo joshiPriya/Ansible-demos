@@ -1,0 +1,7 @@
+- job-group:
+    name: '{name}-tests'
+    jobs:
+      - '{name}-unit-tests':
+          mail-to: 'p.dhananjay.joshi@accenture.com'
+      - '{name}-sonarqube-test':
+          mail-to: 'p.dhananjay.joshi@accenture.com'
