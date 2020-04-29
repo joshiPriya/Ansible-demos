@@ -1,0 +1,9 @@
+-
+  name: install python-pip
+  hosts: server1
+  become: true
+  tasks:
+    - name: install python-pip
+      yum:
+       name: python3
+       state: present

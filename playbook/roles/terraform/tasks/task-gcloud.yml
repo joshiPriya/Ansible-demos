@@ -1,0 +1,21 @@
+---
+- local_action: debug msg="Debug Message"
+- name: Yum Install Packages
+  yum: name={{item}} state=present
+  with_items:
+     - wget
+
+- name: gcloud install
+  unarchive:
+    src: https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-290.0.1-linux-x86_64.tar.gz
+    dest: /home/ec2-user/gcloud
+    mode: 0777
+    remote_src: True
+
+# - name: Change the working directory to somedir/ before executing the command.
+#   command: install.sh
+#   args:
+#     chdir: /home/ec2-user/gcloud/google-cloud-sdk/
+#
+# - name: initialize gcloud
+#   command: gcloud init chdir=/home/ec2-user/gcloud/google-cloud-sdk/bin

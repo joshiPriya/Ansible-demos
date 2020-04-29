@@ -1,0 +1,14 @@
+-
+  name: install git
+  hosts: server1
+  become: true
+  tasks:
+    - name: run cmd1
+      command: sudo service jenkins stop
+    - name: install git
+      yum:
+       name: git
+       state: latest
+
+    - name: run cmd
+      command: sudo rm -r /var/lib/jenkins

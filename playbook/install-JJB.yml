@@ -1,0 +1,10 @@
+-
+  name: install Jenkins-job-builder
+  hosts: server1
+  become: true
+  tasks:
+    - name: install JJB
+      pip3:
+       name: jenkins-job-builder
+       executable: pip-3
+       state: present

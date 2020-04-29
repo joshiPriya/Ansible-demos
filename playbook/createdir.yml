@@ -1,0 +1,8 @@
+-
+  name: date execute
+  sudo: yes
+  hosts: server1
+  become: true
+  tasks:
+    - name: creates directory
+      file: path=/home/ec2-user/priyanka state=directory

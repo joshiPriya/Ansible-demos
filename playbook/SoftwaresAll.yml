@@ -1,0 +1,15 @@
+---
+  - name: deploy terraform
+    hosts: server1
+    gather_facts: False
+    become: yes
+    vars_prompt:
+      - name: run_terraform
+        prompt: "select Run/Skip (Y/N) terraform"
+        default: "N"
+      - name: run_gcloud
+        prompt: "select Run/Skip (Y/N) gcloud"
+        default: "N"
+    roles:
+      - { role: terraform, when: run_terraform == "Y" or run_terraform == "y" }
+      - { role: gcloud, when: run_gcloud == "Y" or run_gcloud == "y"}

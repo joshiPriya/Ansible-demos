@@ -1,0 +1,9 @@
+-
+  name: install Docker
+  hosts: server1
+  become: true
+  tasks:
+    - name: install Docker
+      yum:
+       name: docker
+       state: latest
